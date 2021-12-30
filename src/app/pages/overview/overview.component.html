@@ -1,0 +1,35 @@
+<div class="container" *ngIf="overview">
+    <h2>Overview API Data</h2>
+    <p class="bg-primary">Bestsellers Date{{overview.bestsellers_date?overview.bestsellers_date:"NA"}}</p>
+    <p class="bg-success">Next Published Date:{{overview.next_published_date?overview.next_published_date:"NA"}}.</p>
+    <p class="bg-info">Previous Published Date{{overview.previous_published_date?overview.previous_published_date:"NA"}}
+    </p>
+    <p class="bg-warning">Published Date:{{overview.published_date?overview.published_date:"NA"}}</p>
+    <p class="bg-danger">Published Date
+        Description:{{overview.published_date_description?overview.published_date_description:"NA"}}</p>
+   
+        <h2>Overview List Data Table</h2>
+    <table class="table">
+        <thead>
+          <tr>
+             <th>#</th>
+                <th>List Id</th>
+                <th>List Name</th>
+                <th>List Name Encoded</th>
+                <th>Display Name</th>
+                <th>Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of lists let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.list_name?item.list_name:"-----"}}</td>
+            <td>{{item.list_id?item.list_id:"-----"}}</td>
+            <td>{{item.list_name_encoded?item.list_name_encoded:"-----"}}</td>
+            <td>{{item.display_name?item.display_name:"----"}}</td>
+            <td>{{item.updated?item.updated:"-----"}}</td>
+          </tr>
+        
+        </tbody>
+      </table>
+</div>
